@@ -11,18 +11,18 @@ class Cube:
     angles = [0, 0, 0]
     vertices = []
 
-    def __init__(self, halfLength):
-        self.length = halfLength
+    def __init__(self, length):
+        self.halfLength = length / 2
         self.vertices = \
         [
-            [-halfLength, -halfLength, -halfLength],
-            [-halfLength, -halfLength, halfLength],
-            [-halfLength, halfLength, -halfLength],
-            [-halfLength, halfLength, halfLength],
-            [-halfLength, -halfLength, -halfLength],
-            [halfLength, -halfLength, halfLength],
-            [halfLength, halfLength, -halfLength],
-            [halfLength, halfLength, halfLength],
+            [-self.halfLength, -self.halfLength, -self.halfLength],
+            [-self.halfLength, -self.halfLength, self.halfLength],
+            [-self.halfLength, self.halfLength, -self.halfLength],
+            [-self.halfLength, self.halfLength, self.halfLength],
+            [-self.halfLength, -self.halfLength, -self.halfLength],
+            [self.halfLength, -self.halfLength, self.halfLength],
+            [self.halfLength, self.halfLength, -self.halfLength],
+            [self.halfLength, self.halfLength, self.halfLength],
         ]
 
     # поворот вокруг оси Х
@@ -53,8 +53,8 @@ class Cube:
         self.angles[2] = angle
 
 
-
-cube = Cube(10)
+#длина ребра = 10
+cube = Cube(10) 
 print(cube.vertices)
 
 #поворот не коммутативен - то есть поворот на одни и те же углы, но в разном порядке, даст разные результаты
